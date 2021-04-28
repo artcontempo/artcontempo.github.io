@@ -5,43 +5,113 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frida Kahlo</title>
-    <meta property="og:title" content="Frida_Kahlo" />
-    <meta property="og:description" content="Paskaitykime apie Frida Kahlo." />
-    <meta property="og:image" content="https://static01.nyt.com/images/2020/03/29/books/review/29Burke-sub/03Burke-sub-mediumSquareAt3X-v2.jpg" />
-   
+    <title>Document</title>
     <style>
-        body {
-            color: blueviolet;
-            background: goldenrod;
-            text-align: left;
-            font-family: "Lucida Console", "Courier New", monospace;
+        @import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+    </style>
+    <style>
+        .nav ul {
+            *zoom: 1;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            background: #333;
         }
 
-        h1, h3{
-            color: purple;
-            text-align: center;
+        .nav ul:before,
+        .nav ul:after {
+            content: "";
+            display: table;
         }
 
-        img {
+        .nav ul:after {
+            clear: both;
+        }
+
+        .nav ul>li {
+            float: left;
+            position: relative;
+        }
+
+        .nav a {
             display: block;
-            margin-left: auto;
-            margin-right: auto;
+            padding: 10px 20px;
+            line-height: 1.2em;
+            color: #fff;
+            border-left: 1px solid #595959;
+        }
+
+        .nav a:hover {
+            text-decoration: none;
+            background: #595959;
+        }
+
+        .nav li ul {
+            background: #273754;
+        }
+
+        .nav li ul li {
+            width: 200px;
+        }
+
+        .nav li ul a {
+            border: none;
+        }
+
+        .nav li ul a:hover {
+            background: rgba(0, 0, 0, 0.2);
         }
     </style>
+    <style>
+        .nav li ul {
+            position: absolute;
+            left: 0;
+            top: 36px;
+            z-index: 1;
+            visibility: hidden;
+            opacity: 0;
+            filter: alpha(opacity=0);
+            -webkit-transition: 200ms ease;
+            -moz-transition: 200ms ease;
+            -o-transition: 200ms ease;
+            transition: 200ms ease;
+        }
 
+        .nav ul>li:hover ul {
+            visibility: visible;
+            opacity: 1;
+            filter: alpha(opacity=100);
+        }
+
+        .nav a {
+            /* border: 2px solid red;
+  padding: 10px; */
+            border-radius: 25px;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>FRIDA KAHLO - viena geriausiai žinomų menininkių.</h1>
-    <h3>(1907 – 1954)</h3>
-    <img src="https://i.guim.co.uk/img/media/8d1483b028d86d43b7d17f01bd808d116df5555c/0_394_2251_1350/master/2251.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=57aeb420ab1b9c3f952e0e725538fc18"
-        alt="Frida Kahlo portretas">
-    <br>
-    <p> <a href="https://lt.wikipedia.org/wiki/Frida_Kahlo" target="_blank"
-            style="color: purple; text-align: center;">Frida Kahlo</a> -viena garsiausių Meksikos dailininkių, realizmo,
-        siurrealizmo ir simbolizmo atstovė. Daugumos darbų herojė - ji pati. Pagrindinė ne itin gausaus palikimo dalis ir yra jos autotportretai.</p>
-
+    <nav class="nav">
+        <ul>
+            <li>
+                <a href="#">Nav Item</a>
+                <ul>
+                    <li><a href="#">Subnav Item</a></li>
+                    <li><a href="#">Subnav Item</a></li>
+                    <li><a href="#">Subnav Item</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Nav Item</a>
+                <ul>
+                    <li><a href="#">Subnav Item</a></li>
+                    <li><a href="#">Subnav Item</a></li>
+                    <li><a href="#">Subnav Item</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
 </body>
 
 </html>
