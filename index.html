@@ -5,45 +5,158 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Frida Kahlo</title>
+    <meta property="og:title" content="Frida_Kahlo" />
+    <meta property="og:description" content="Paskaitykime apie Frida Kahlo." />
+    <meta property="og:image" content="https://www.fridakahlo.org/images/frida-photo.jpg" />
 </head>
 
 <body>
     <style>
-        @import url("https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap");
+        @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
 
-        .flex-container {
-            margin: 2rem;
+        body {
+            background: orange;
+            font-family: 'Balsamiq Sans', cursive;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .tabs {
             display: flex;
-            flex: around;
-            justify-content: center;
-           }
-
-        nav {
-            border-bottom: 2px solid #ff0000;
-            margin: inherit;
+            flex-wrap: wrap;
+            max-width: 60rem;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 2rem;
         }
 
-        div {
-            border-bottom: 2px solid transparent;
-            display: inline-block;
-            font-family: Zen Dots;
-            text-align: justify;
-            font-size: 20px;
+        .tabs input[type="radio"] {
+            display: none;
+        }
+
+        .tabs label {
+            padding: 2rem 4rem;
+            background: transparent;
             font-weight: bold;
-            margin: inherit;
+            transition: background-color 400ms;
         }
 
-        div:hover {
-            border-bottom: 2px solid #ff0000;
+        .tabs label:hover {
+            background-color: rgb(187, 59, 187);
+        }
+
+        .tabs .tab {
+            width: 100%;
+            padding: 1.5rem;
+            background: rgb(231, 208, 226);
+            order: 1;
+            display: none;
+        }
+
+        .tabs .tab h2 {
+            font-size: 2rem;
+        }
+
+        .tabs input[type="radio"]:checked+label+.tab {
+            display: block;
+        }
+
+        .tabs input[type="radio"]:checked+label {
+            background: rgb(231, 208, 226);
+        }
+
+        .content-about {
+            display: flex;
+
+        }
+
+        .content-about-img {
+            max-width: 50%;
+        }
+
+        .content-about-text {
+            padding-left: 10px;
+        }
+
+        .works-table-picture-col {
+            width: 25%;
+        }
+
+        .works-table-title-col {
+            text-align: center;
         }
     </style>
-    <nav class="flex-container">
-        <div>Home</div>
-        <div>About</div>
-        <div>News</div>
-    </nav>
+    <div class="tabs">
+        <input type="radio" id="tab1" name="tabs" checked="checked" />
+        <label for="tab1">Apie</label>
+        <div class="tab">
+            <h2>Apie autorę:</h2>
+            <section class="content-about">
+                <img class="content-about-img" src="https://www.fridakahlo.org/images/frida-photo.jpg"
+                    alt="Frida Kahlo portretas">
+                <p class="content-about-text">
+                    <a href="https://lt.wikipedia.org/wiki/Frida_Kahlo" target="_blank">Frida Kahlo</a> (1907-1954) - viena
+                    garsiausių Meksikos dailininkių, realizmo, siurrealizmo ir simbolizmo atstovė. Daugumos darbų herojė
+                    - ji pati. Pagrindinė ne itin gausaus
+                    palikimo dalis ir yra jos autotportretai.
+                </p>
+            </section>
+        </div>
 
+        <input type="radio" id="tab2" name="tabs" />
+        <label for="tab2">Žymiausi darbai</label>
+        <div class="tab">
+            <h2>Žymiausi autorės darbai:</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="works-table-picture-col">Paveikslas</th>
+                        <th class="works-table-title-col">Pavadinimas</th>
+                        <th>Metai</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="works-table-picture-col"><img
+                                src="https://www.fridakahlo.org/images/paintings/the-two-fridas.jpg"
+                                alt="The Two Fridas"></td>
+                        <td class="works-table-title-col">The Two Fridas</td>
+                        <td>1939</td>
+                    </tr>
+                    <tr>
+                        <td class="works-table-picture-col"><img
+                                src="https://www.fridakahlo.org/images/paintings/self-portrait-with-necklace-of-thorns.jpg"
+                                alt="Self-Portrait with Thorn Necklace and Hummingbird"></td>
+                        <td class="works-table-title-col">Self-Portrait with Thorn Necklace and Hummingbird</td>
+                        <td>1940</td>
+                    </tr>
+                    <tr>
+                        <td class="works-table-picture-col"><img
+                                src="https://www.fridakahlo.org/images/paintings/viva-la-vida-watermelons.jpg"
+                                alt="Viva la Vida, Watermelons"></td>
+                        <td class="works-table-title-col">Viva la Vida, Watermelons</td>
+                        <td>1954</td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+
+        <input type="radio" id="tab3" name="tabs" />
+        <label for="tab3">Šaltiniai</label>
+        <div class="tab">
+            <h2>Šaltiniai:</h2>
+            <p>
+               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi aperiam facere quod officia maxime quam.
+               
+            </p>
+        </div>
+    </div>
 </body>
 
 </html>
